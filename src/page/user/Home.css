@@ -1,0 +1,20 @@
+.home {
+  text-align: center;
+  padding: 40px;
+}
+
+.categories span {
+  margin: 10px;
+  padding: 8px 14px;
+  background: #eee;
+  border-radius: 20px;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: black;
+  color: white;
+  text-decoration: none;
+}

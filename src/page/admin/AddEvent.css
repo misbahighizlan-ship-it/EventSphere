@@ -1,0 +1,49 @@
+/* src/page/admin/AddEvent.css */
+
+div {
+  background-color: #000; /* background noir */
+  color: #12aee0; /* text color */
+  min-height: 100vh;
+  padding: 30px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+  gap: 15px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #12aee0;
+  border-radius: 5px;
+  background-color: #111;
+  color: #12aee0;
+}
+
+input::placeholder {
+  color: #12aee0;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #12aee0;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #0e94c8;
+}
