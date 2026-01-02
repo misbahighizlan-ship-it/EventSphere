@@ -1,48 +1,49 @@
-/* src/page/admin/Dashboard.css */
-
-div {
-  background-color: #000;
-  color: #12aee0;
-  min-height: 100vh;
+.dashboard-container {
   padding: 20px;
+  background-color: #000; /* noir */
+  color: #12aee0; /* accent */
+  min-height: 80vh;
   font-family: Arial, sans-serif;
 }
 
-h2 {
+.dashboard-container h2 {
   text-align: center;
   margin-bottom: 20px;
 }
 
-table {
+.dashboard-table {
   width: 100%;
   border-collapse: collapse;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+  border: 1px solid #12aee0;
+  padding: 10px;
   text-align: left;
 }
 
-th, td {
-  padding: 10px;
-  border: 1px solid #12aee0;
-}
-
-th {
+.dashboard-table th {
   background-color: #111;
 }
 
-tr:nth-child(even) {
-  background-color: #111;
+.dashboard-table td img {
+  max-width: 80px;
+  border-radius: 5px;
 }
 
-button {
+.dashboard-table button {
   margin-right: 5px;
   padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
   background-color: #12aee0;
   color: #000;
+  border: none;
+  border-radius: 3px;
   cursor: pointer;
+  font-weight: bold;
   transition: 0.3s;
 }
 
-button:hover {
-  background-color: #0e94c8;
+.dashboard-table button:hover {
+  opacity: 0.8;
 }

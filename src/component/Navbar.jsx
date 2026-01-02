@@ -1,16 +1,22 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import { useSelector } from "react-redux";
+import CartSidebar from "./CartSidebar";
 import "./Navbar.css";
 
 export default function Navbar() {
-  const items = useSelector(state => state.cart.items);
+  const [isOpen, setIsOpen] = useState(false);
+  const cartItems = useSelector(state => state.cart.items);
+
+  const toggleSidebar = () => setIsOpen(!isOpen);
 
   return (
-    <nav>
-      <Link to="/">EventSphere</Link>
-      <Link to="/events">Événements</Link>
-      <Link to="/checkout">Checkout</Link>
-      <span className="badge">{items.length}</span>
+    <nav className="navbar">
+      <h1>EventSphere</h1>
+      <button onClick={toggleSidebar} className="cart-btn">
+        Panier ({cartItems.length})
+      </button>
+
+      <CartSidebar cartItems={cartItems} toggleSidebar={toggleSidebar} isOpen={isOpen} />
     </nav>
   );
 }

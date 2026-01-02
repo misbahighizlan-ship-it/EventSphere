@@ -1,40 +1,58 @@
-/*import { useSelector, useDispatch } from "react-redux";
-import api from "../../api/api";
-import { clearCart } from "../../redux/cartSlice";
+import { useSelector } from "react-redux";
+import { useState } from "react";
+import api from "../../services/api";
+import "./Checkout.css";
 
 export default function Checkout() {
-  const cart = useSelector(state => state.cart);
-  const dispatch = useDispatch();
+  const cartItems = useSelector(state => state.cart.items);
+  const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    phone: ""
+  });
+
+  const handleChange = (e) => {
+    setUser({...user, [e.target.name]: e.target.value});
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const order = {
-      items: cart.items,
-      total: cart.total,
-      name: e.target.name.value,
-      email: e.target.email.value,
-      phone: e.target.phone.value
-    };
-
-    await api.post("/orders", order);
-    await fetch(import.meta.env.VITE_N8N_URL, {
-      method: "POST",
-      body: JSON.stringify(order),
-      headers: { "Content-Type": "application/json" }
-    });
-
-    dispatch(clearCart());
-    alert("Commande validée !");
+    try {
+      const order = {
+        user,
+        items: cartItems,
+        total
+      };
+      await api.post("/orders", order);
+      alert("Commande passée avec succès !");
+    } catch (err) {
+      console.log(err);
+      alert("Erreur lors de la commande !");
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input name="name" placeholder="Nom" required />
-      <input name="email" placeholder="Email" required />
-      <input name="phone" placeholder="Téléphone" required />
-      <button>Commander</button>
-    </form>
+    <div className="checkout-container">
+      <h2>Checkout</h2>
+      <div className="checkout-cart">
+        {cartItems.map(item => (
+          <div key={item.id} className="checkout-item">
+            <p>{item.title}</p>
+            <p>Quantité: {item.quantity}</p>
+            <p>Prix: {item.price} €</p>
+          </div>
+        ))}
+        <h3>Total: {total} €</h3>
+      </div>
+
+      <form className="checkout-form" onSubmit={handleSubmit}>
+        <input type="text" name="name" placeholder="Nom complet" onChange={handleChange} required />
+        <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
+        <input type="tel" name="phone" placeholder="Téléphone" onChange={handleChange} required />
+        <button type="submit">Valider la commande</button>
+      </form>
+    </div>
   );
 }
-*/

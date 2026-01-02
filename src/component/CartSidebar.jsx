@@ -24,7 +24,7 @@ console.log("CartSidebar render:", show);
         <div key={item.id} className="cart-item">
           <img src={item.image} alt={item.name} />
           <div>
-            <h4>{item.name}</h4>
+            <h4>{item.title}</h4>
             <p>{item.price} €</p>
             <div className="qty">
               <button onClick={() => dispatch(incrementQty(item.id))}>-</button>

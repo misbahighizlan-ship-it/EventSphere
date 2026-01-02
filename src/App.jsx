@@ -10,7 +10,7 @@ import AddEvent from "./page/admin/AddEvent";
 import Dashboard from "./page/admin/Dashboard";
 import Login from "./page/admin/Login";
 import Orders from "./page/admin/Orders";
-
+import UserOrders from "./page/user/UserOrders";
 function App() {
   return (
     <BrowserRouter>
@@ -22,6 +22,7 @@ function App() {
         <Route path="/events" element={<Events />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/orders" element={<UserOrders userEmail="ghizlane@example.com" />} />
 
         {/* Admin */}
         <Route path="/admin/login" element={<Login />} />

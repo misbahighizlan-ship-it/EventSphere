@@ -1,4 +1,4 @@
-/*export default function Contact() {
+export default function Contact() {
   const submit = async (e) => {
     e.preventDefault();
 
@@ -23,4 +23,4 @@
       <button>Envoyer</button>
     </form>
   );
-}*/
+}

@@ -1,18 +1,13 @@
-/*import { useDispatch } from "react-redux";
-import { addToCart } from "../redux/cartSlice";
+import "./EventCard.css";
 
 export default function EventCard({ event }) {
-  const dispatch = useDispatch();
-
   return (
-    <div>
-      <img src={event.image} width="200" />
-      <h4>{event.name}</h4>
-      <p>{event.price} DH</p>
-      <button onClick={() => dispatch(addToCart(event))}>
-        Ajouter au panier
-      </button>
+    <div className="event-card">
+      <img src={event.image || "https://via.placeholder.com/150"} alt={event.title} />
+      <h3>{event.title}</h3>
+      <p>{event.category}</p>
+      <p>{event.description}</p>
+      <p className="price">{event.price} MAD</p>
     </div>
   );
 }
-*/

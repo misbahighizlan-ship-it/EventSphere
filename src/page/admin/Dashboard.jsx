@@ -7,6 +7,7 @@ export default function Dashboard() {
   const [events, setEvents] = useState([]);
   const navigate = useNavigate();
 
+  // جلب الأحداث من JSON Server
   const fetchEvents = async () => {
     try {
       const res = await api.get("/events");
@@ -20,6 +21,7 @@ export default function Dashboard() {
     fetchEvents();
   }, []);
 
+  // حذف حدث
   const handleDelete = async (id) => {
     if (window.confirm("Supprimer cet événement ?")) {
       try {
@@ -32,15 +34,16 @@ export default function Dashboard() {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="dashboard-container">
       <h2>Dashboard Admin</h2>
-      <table border="1" cellPadding="5">
+      <table className="dashboard-table">
         <thead>
           <tr>
             <th>Titre</th>
             <th>Description</th>
             <th>Catégorie</th>
             <th>Prix</th>
+            <th>Image</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -51,6 +54,11 @@ export default function Dashboard() {
               <td>{event.description}</td>
               <td>{event.category}</td>
               <td>{event.price}</td>
+              <td>
+                {event.image && (
+                  <img src={event.image} alt={event.title} />
+                )}
+              </td>
               <td>
                 <button onClick={() => navigate(`/admin/add`)}>Modifier</button>
                 <button onClick={() => handleDelete(event.id)}>Supprimer</button>
