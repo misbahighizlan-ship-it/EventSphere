@@ -1,13 +1,29 @@
+
 import "./EventCard.css";
 
-export default function EventCard({ event }) {
+export default function EventCard({ event, onAddToCart }) {
   return (
     <div className="event-card">
-      <img src={event.image || "https://via.placeholder.com/150"} alt={event.title} />
-      <h3>{event.title}</h3>
-      <p>{event.category}</p>
-      <p>{event.description}</p>
-      <p className="price">{event.price} MAD</p>
+      
+      <div className="event-image">
+        <img
+          src={event.image || "https://via.placeholder.com/400x250"}
+          alt={event.title}
+        />
+
+        <span className="event-category">{event.category}</span>
+        <span className="event-price">{event.price} MAD</span>
+      </div>
+
+      {/* Content */}
+      <div className="event-content">
+        <h3>{event.title}</h3>
+        <p className="event-description">{event.description}</p>
+
+        <button className="add-btn" onClick={onAddToCart}>
+          + Ajouter au panier
+        </button>
+      </div>
     </div>
   );
 }

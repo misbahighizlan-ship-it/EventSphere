@@ -1,4 +1,21 @@
-{ 
-"events":[],
-"orders":[]
+{
+  "events": [
+    {
+      "id": "ce36",
+      "title": "Summer Music Festival",
+      "description": "The biggest music festival of the year featuring top artists from around the world.",
+      "category": "Music",
+      "image": "https://res.cloudinary.com/disrzmhfk/image/upload/v1767370668/cvp88ugmrwiiq8hcgyo6.jpg",
+      "price": "150"
+    },
+    {
+      "id": "4893",
+      "title": "hbjkbjk",
+      "description": "n n, ,",
+      "category": "art",
+      "image": "https://res.cloudinary.com/disrzmhfk/image/upload/v1767371427/lec9pxbwlkyjldgsacob.jpg",
+      "price": "12"
+    }
+  ],
+  "orders": []
 }

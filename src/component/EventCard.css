@@ -1,31 +1,78 @@
+
 .event-card {
-  background-color: #111;
-  border: 1px solid #12aee0;
-  border-radius: 8px;
-  padding: 10px;
-  width: 200px;
-  text-align: center;
+  background: #0b1220;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 320px;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
 }
 
-.event-card img {
+.event-card:hover {
+  transform: translateY(-6px);
+}
+
+.event-image {
+  position: relative;
+  height: 200px;
+}
+
+.event-image img {
   width: 100%;
-  height: 120px;
+  height: 100%;
   object-fit: cover;
-  border-radius: 5px;
-  margin-bottom: 10px;
 }
 
-.event-card h3 {
-  margin: 5px 0;
-  color: #12aee0;
+.event-category {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #7c3aed;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
 }
 
-.event-card p {
-  margin: 3px 0;
-  font-size: 0.9rem;
-}
-
-.event-card .price {
+.event-price {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #22d3ee;
+  color: #000;
+  padding: 6px 10px;
   font-weight: bold;
-  color: #12aee0;
+  font-size: 13px;
+  border-radius: 20px;
+}
+
+.event-content {
+  padding: 16px;
+}
+
+.event-content h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.event-description {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 16px;
+}
+
+.add-btn {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(90deg, #22d3ee, #38bdf8);
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.add-btn:hover {
+  opacity: 0.85;
 }

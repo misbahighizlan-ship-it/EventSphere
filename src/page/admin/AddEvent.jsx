@@ -21,9 +21,15 @@ export default function AddEvent() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
- // Upload image 
+  // ✅ Upload image 
   const handleImageUpload = async (e) => {
     const file = e.target.files[0];
+
+    //
+    console.log("FILE:", file);
+  console.log("CLOUD NAME:", import.meta.env.VITE_CLOUDINARY_CLOUD_NAME);
+  console.log("UPLOAD PRESET:", import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET);
+//
     if (!file) return;
 
     setUploading(true);
@@ -36,15 +42,18 @@ export default function AddEvent() {
     );
 
     try {
-      const res = await axios.post(
-        `https://api.cloudinary.com/v1_1/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/upload`,
-        data
-      );
+     const res = await axios.post(
+  `https://api.cloudinary.com/v1_1/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload`,
+  data
+);
 
+//
+console.log("CLOUDINARY RESPONSE:", res.data);
+///
       // axios -> res.data
       setForm({ ...form, image: res.data.secure_url });
     } catch (err) {
-      console.error(err);
+      console.error("UPLOAD ERROR:", err.response?.data || err);
       alert("Erreur lors du upload !");
     } finally {
       setUploading(false);

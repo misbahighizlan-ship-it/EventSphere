@@ -1,3 +1,4 @@
+
 .events-page {
   padding: 20px;
   background-color: #000;
@@ -8,5 +9,24 @@
 .events-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 24px;
+}
+
+.event-wrapper {
+  background: #111;
+  border: 1px solid #12aee0;
+  border-radius: 8px;
+  padding: 10px;
+  width: 220px;
+}
+
+.add-btn {
+  width: 100%;
+  margin-top: 8px;
+  padding: 6px;
+  background: #12aee0;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  border-radius: 5px;
 }

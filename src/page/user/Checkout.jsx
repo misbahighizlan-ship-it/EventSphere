@@ -1,11 +1,18 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
+import axios from "axios";
+import { clearCart } from "../../redux/cartSlice";
 import api from "../../services/api";
 import "./Checkout.css";
 
 export default function Checkout() {
   const cartItems = useSelector(state => state.cart.items);
-  const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const total = cartItems.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
+
+  const dispatch = useDispatch();
 
   const [user, setUser] = useState({
     name: "",
@@ -14,18 +21,23 @@ export default function Checkout() {
   });
 
   const handleChange = (e) => {
-    setUser({...user, [e.target.name]: e.target.value});
+    setUser({ ...user, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       const order = {
         user,
         items: cartItems,
-        total
+        total,
       };
+
       await api.post("/orders", order);
+      await axios.post(import.meta.env.VITE_N8N_URL, order);
+
+      dispatch(clearCart());
       alert("Commande passée avec succès !");
     } catch (err) {
       console.log(err);
@@ -36,6 +48,7 @@ export default function Checkout() {
   return (
     <div className="checkout-container">
       <h2>Checkout</h2>
+
       <div className="checkout-cart">
         {cartItems.map(item => (
           <div key={item.id} className="checkout-item">

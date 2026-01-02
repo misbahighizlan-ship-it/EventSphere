@@ -21,12 +21,11 @@ export default function Events() {
 
       <div className="events-list">
         {events.map(event => (
-          <div key={event.id}>
-            <EventCard event={event} />
-            <button onClick={() => dispatch(addToCart(event))}>
-              Ajouter au panier
-            </button>
-          </div>
+          <EventCard
+            key={event._id || event.id}
+            event={event}
+            onAddToCart={() => dispatch(addToCart(event))}
+          />
         ))}
       </div>
     </div>
