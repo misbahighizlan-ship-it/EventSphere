@@ -1,27 +1,26 @@
-/* src/page/admin/AddEvent.css */
-
-div {
-  background-color: #000; /* background noir */
-  color: #12aee0; /* text color */
-  min-height: 100vh;
-  padding: 30px;
-  font-family: Arial, sans-serif;
+.add-event-container {
+  padding: 20px;
+  background-color: #000; /* noir */
+  color: #12aee0; /* accent */
+  min-height: 80vh;
 }
 
-h2 {
+.add-event-container h2 {
   text-align: center;
   margin-bottom: 20px;
 }
 
-form {
+.add-event-container form {
   display: flex;
   flex-direction: column;
-  max-width: 500px;
+  max-width: 400px;
   margin: 0 auto;
-  gap: 15px;
 }
 
-input {
+.add-event-container input[type="text"],
+.add-event-container input[type="number"],
+.add-event-container input[type="file"] {
+  margin-bottom: 15px;
   padding: 10px;
   border: 1px solid #12aee0;
   border-radius: 5px;
@@ -29,21 +28,27 @@ input {
   color: #12aee0;
 }
 
-input::placeholder {
-  color: #12aee0;
+.add-event-container input::placeholder {
+  color: #12aee0aa;
 }
 
-button {
+.add-event-container button {
   padding: 10px;
-  border: none;
-  border-radius: 5px;
   background-color: #12aee0;
   color: #000;
-  font-weight: bold;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  transition: 0.3s;
+  font-weight: bold;
 }
 
-button:hover {
-  background-color: #0e94c8;
+.add-event-container button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.preview-image {
+  max-width: 100%;
+  margin-bottom: 15px;
+  border-radius: 5px;
 }

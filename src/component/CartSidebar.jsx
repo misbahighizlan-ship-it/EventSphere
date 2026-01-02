@@ -1,27 +1,47 @@
-/*import { useSelector, useDispatch } from "react-redux";
-import { increaseQty, decreaseQty } from "../redux/cartSlice";
+
+import { useSelector, useDispatch } from "react-redux";
+import {
+  incrementQty,
+  decrementQty,
+  removeFromCart
+} from "../redux/cartSlice";
+
 import "./CartSidebar.css";
 
-export default function CartSidebar() {
+export default function CartSidebar({ show }) {
   const { items, total } = useSelector(state => state.cart);
   const dispatch = useDispatch();
+console.log("CartSidebar render:", show);
+  if (!show) return null;
 
   return (
-    <div className="cart">
-      <h3>Panier</h3>
-
-      {items.map(item => (
+    <aside className={`cart ${show ? "open" : ""}`}>
+  <div className="cart-items">
+    {items.length === 0 ? (
+      <p className="empty">Panier vide</p>
+    ) : (
+      items.map(item => (
         <div key={item.id} className="cart-item">
-          <span>{item.name}</span>
+          <img src={item.image} alt={item.name} />
           <div>
-            <button onClick={() => dispatch(decreaseQty(item.id))}>-</button>
-            <span>{item.qty}</span>
-            <button onClick={() => dispatch(increaseQty(item.id))}>+</button>
+            <h4>{item.name}</h4>
+            <p>{item.price} €</p>
+            <div className="qty">
+              <button onClick={() => dispatch(incrementQty(item.id))}>-</button>
+              <span>{item.quantity}</span>
+              <button onClick={() => dispatch(decrementQty(item.id))}>+</button>
+            </div>
+            <button onClick={() => dispatch(removeFromCart(item.id))}>Supprimer</button>
           </div>
         </div>
-      ))}
+      ))
+    )}
+  </div>
 
-      <h4>Total : {total} DH</h4>
-    </div>
+  <div className="cart-total">
+    Total : {total} €
+  </div>
+</aside>
+
   );
-}*/
+}
