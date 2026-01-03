@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import api from "../../services/api"; // axios instance ديالك
+import api from "../../services/api"; // axios 
 import "./Orders.css";
 
 export default function Orders() {
   const [orders, setOrders] = useState([]);
 
-  // جلب جميع الطلبات من JSON Server
+  //JSON Server
   const fetchOrders = async () => {
     try {
       const res = await api.get("/orders");

@@ -8,7 +8,7 @@ export default function UserOrders({ userEmail }) {
   const fetchOrders = async () => {
     try {
       const res = await api.get("/orders");
-      // فلترة الطلبات على حسب email المستخدم
+ //email 
       const userOrders = res.data.filter(order => order.email === userEmail);
       setOrders(userOrders);
     } catch (err) {

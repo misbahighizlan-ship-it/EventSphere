@@ -1,3 +1,6 @@
+
+import "./Login.css";
+
 export default function Login() {
   const login = (e) => {
     e.preventDefault();
@@ -6,16 +9,23 @@ export default function Login() {
       e.target.user.value === import.meta.env.VITE_ADMIN_USER &&
       e.target.pass.value === import.meta.env.VITE_ADMIN_PASS
     ) {
-      localStorage.setItem("admin", true);
+      localStorage.setItem("admin", "true");
       window.location.href = "/admin/dashboard";
+    } else {
+      alert("Identifiants incorrects");
     }
   };
 
   return (
-    <form onSubmit={login}>
-      <input name="user" />
-      <input name="pass" type="password" />
-      <button>Login</button>
-    </form>
+    <div className="login-page">
+      <form className="login-card" onSubmit={login}>
+        <h2>Admin Login</h2>
+
+        <input type="text" name="user" placeholder="Username" required />
+        <input type="password" name="pass" placeholder="Password" required />
+
+        <button type="submit">Se connecter</button>
+      </form>
+    </div>
   );
 }
