@@ -15,12 +15,14 @@ import Dashboard from "./page/admin/Dashboard";
 import Login from "./page/admin/Login";
 import Orders from "./page/admin/Orders";
 
+import ProtectedRoute from "./utils/ProtectedRoute";
+
 function App() {
   const [showCart, setShowCart] = useState(false);
 
   return (
     <BrowserRouter>
-      {/* button panier*/}
+      {/* button panier dans Navbar*/}
       <Navbar onCartClick={() => setShowCart(!showCart)} />
 
       {/* Sidebar  */}
@@ -32,18 +34,30 @@ function App() {
         <Route path="/events" element={<Events />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/contact" element={<Contact />} />
-        <Route
+      
+        {/*<Route
           path="/orders"
           element={<UserOrders userEmail="ghizlane@example.com" />}
-        />
+        />*/}
 
         {/* Admin */}
-        <Route path="/admin/login" element={<Login />} />
-        <Route path="/admin/add" element={<AddEvent />} />
-        <Route path="/admin/dashboard" element={<Dashboard />} />
-        <Route path="/admin/orders" element={<Orders />} />
+        <Route path="/admin/login" element={<Login />} /> 
+        <Route path="/admin/dashboard" element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route path="/admin/add" element={ <ProtectedRoute> <AddEvent />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route path="/admin/orders" element={
+            <ProtectedRoute> <Orders /> </ProtectedRoute>}/>
       </Routes>
-    </BrowserRouter>
+      </BrowserRouter>
   );
 }
 

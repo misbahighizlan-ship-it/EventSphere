@@ -1,6 +1,6 @@
 
 import "./EventCard.css";
-
+import { FaMapMarkerAlt, FaCalendarAlt } from "react-icons/fa";
 export default function EventCard({ event, onAddToCart }) {
   return (
     <div className="event-card">
@@ -19,6 +19,15 @@ export default function EventCard({ event, onAddToCart }) {
       <div className="event-content">
         <h3>{event.title}</h3>
         <p className="event-description">{event.description}</p>
+
+<div className="event-info">
+          <span>
+            <FaCalendarAlt /> {event.date}
+          </span>
+          <span>
+            <FaMapMarkerAlt /> {event.location}
+          </span>
+        </div>
 
         <button className="add-btn" onClick={onAddToCart}>
           + Ajouter au panier

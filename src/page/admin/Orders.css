@@ -38,3 +38,25 @@
   background-color: #12aee0;
   color: #121212;
 }
+.action-cell {
+  text-align: center;
+}
+
+/* delete icon button */
+.delete-icon-btn {
+  background: transparent;
+  border: none;
+  color: #ff4d4f;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.delete-icon-btn:hover {
+  color: #d9363e;
+  transform: scale(1.2);
+}
+
+.delete-icon-btn:active {
+  transform: scale(0.95);
+}

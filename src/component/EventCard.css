@@ -1,21 +1,25 @@
 
 .event-card {
   background: #0b1220;
-  border-radius: 16px;
+  border-radius: 15px;
   overflow: hidden;
   width: 320px;
   color: #fff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
+   display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
   transition: transform 0.3s ease;
 }
 
 .event-card:hover {
   transform: translateY(-6px);
 }
-
+/*imge*/
 .event-image {
   position: relative;
-  height: 200px;
+  height: 190px;
 }
 
 .event-image img {
@@ -49,17 +53,36 @@
 
 .event-content {
   padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .event-content h3 {
-  margin: 0 0 8px;
-  font-size: 18px;
+  color: #fff;
+  font-size: 17px;
 }
 
 .event-description {
   font-size: 14px;
   opacity: 0.8;
   margin-bottom: 16px;
+  color: #aaa;
+  line-height: 1.4;
+}
+
+/* Info */
+.event-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  color: #ccc;
+}
+
+.event-info svg {
+  margin-right: 6px;
+  color: #20e3c2;
 }
 
 .add-btn {

@@ -100,3 +100,14 @@
   margin-top: 40px;
   color: gray;
 }
+/*por commander*/
+.checkout-btn{
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(90deg, #22d3ee, #38bdf8);
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}

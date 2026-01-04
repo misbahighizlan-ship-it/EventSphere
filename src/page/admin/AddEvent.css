@@ -16,7 +16,7 @@
   max-width: 400px;
   margin: 0 auto;
 }
-
+.add-event-container input[type="date"],
 .add-event-container input[type="text"],
 .add-event-container input[type="number"],
 .add-event-container input[type="file"] {

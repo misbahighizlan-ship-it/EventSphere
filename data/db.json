@@ -1,21 +1,234 @@
 {
   "events": [
     {
-      "id": "ce36",
-      "title": "Summer Music Festival",
-      "description": "The biggest music festival of the year featuring top artists from around the world.",
-      "category": "Music",
-      "image": "https://res.cloudinary.com/disrzmhfk/image/upload/v1767370668/cvp88ugmrwiiq8hcgyo6.jpg",
-      "price": "150"
+      "id": "cfe8",
+      "title": "Humouraji",
+      "description": "Rires non-stop avec les sketches les plus fous de Talis !",
+      "category": "Spectacle",
+      "date": "2026-02-02",
+      "image": "https://res.cloudinary.com/disrzmhfk/image/upload/v1767456403/uj3or7nfeafbiyx409le.png",
+      "price": "120",
+      "lieu": "AGADIR"
     },
     {
-      "id": "4893",
-      "title": "hbjkbjk",
-      "description": "n n, ,",
-      "category": "art",
-      "image": "https://res.cloudinary.com/disrzmhfk/image/upload/v1767371427/lec9pxbwlkyjldgsacob.jpg",
-      "price": "12"
+      "id": "da14",
+      "title": "Summer Vibes Festival 2026",
+      "description": "Vivez 2 jours de musique, danse et fun sous le soleil !",
+      "category": "Musique",
+      "date": "2026-08-07",
+      "image": "https://res.cloudinary.com/disrzmhfk/image/upload/v1767456503/jow2wipsuubjekmxtw6k.jpg",
+      "price": "250",
+      "lieu": "Rabat"
+    },
+    {
+      "id": "ee54",
+      "title": "GITEX 2026: Future of Tech",
+      "description": "Explorez l’innovation, l’IA et les dernières tendances tech en un seul lieu !",
+      "category": "Tech",
+      "date": "2026-04-07",
+      "image": "https://res.cloudinary.com/disrzmhfk/image/upload/v1767457140/p2aqmji4qjupsx5dgooz.jpg",
+      "price": "400",
+      "lieu": "Marrakech"
+    },
+    {
+      "id": "33b5",
+      "title": "CAN 2025: Maroc vs Tanzanie",
+      "description": "Match des 8èmes de finale – Soutenez les Lions de l’Atlas !",
+      "category": "Sport",
+      "date": "2026-01-04",
+      "image": "https://res.cloudinary.com/disrzmhfk/image/upload/v1767457222/h99mmohc9ajrrzipl1cl.jpg",
+      "price": "300",
+      "lieu": "Rabat"
+    },
+    {
+      "id": "7a2c",
+      "title": "Art Expo 2026",
+      "description": "Découvrez des œuvres uniques et rencontrez des artistes inspirants !",
+      "category": "Art",
+      "date": "2026-02-12",
+      "image": "https://res.cloudinary.com/disrzmhfk/image/upload/v1767457366/wt89gavdbazwfvnq1fxf.jpg",
+      "price": "130",
+      "lieu": "Casablanca"
+    },
+    {
+      "id": "85f6",
+      "title": "Match Maroc vs Mali",
+      "description": "  votre équipe National besoin de leur sotien",
+      "category": "Sport",
+      "date": "2026-01-15",
+      "image": "https://res.cloudinary.com/disrzmhfk/image/upload/v1767534147/nx9xljiuds2yi8zapanc.jpg",
+      "price": "190",
+      "Location": "Casablanca"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "id": "f136",
+      "name": "Ghizlane misbahi",
+      "email": "misbahighizlan@gmail.com",
+      "phone": "0694501502",
+      "items": [
+        {
+          "id": "da14",
+          "title": "Summer Vibes Festival 2026",
+          "description": "Vivez 2 jours de musique, danse et fun sous le soleil !",
+          "category": "Musique",
+          "date": "2026-08-07",
+          "image": "https://res.cloudinary.com/disrzmhfk/image/upload/v1767456503/jow2wipsuubjekmxtw6k.jpg",
+          "price": "250",
+          "lieu": "Rabat",
+          "quantity": 1
+        }
+      ],
+      "total": 250,
+      "status": "en attente"
+    },
+    {
+      "id": "664e",
+      "name": "Ghizlane misbahi",
+      "email": "misbahighizlan@gmail.com",
+      "phone": "0694501502",
+      "items": [
+        {
+          "id": "da14",
+          "title": "Summer Vibes Festival 2026",
+          "description": "Vivez 2 jours de musique, danse et fun sous le soleil !",
+          "category": "Musique",
+          "date": "2026-08-07",
+          "image": "https://res.cloudinary.com/disrzmhfk/image/upload/v1767456503/jow2wipsuubjekmxtw6k.jpg",
+          "price": "250",
+          "lieu": "Rabat",
+          "quantity": 1
+        }
+      ],
+      "total": 250,
+      "status": "en attente"
+    },
+    {
+      "id": "67b3",
+      "name": "Ghizlane misbahi",
+      "email": "misbahighizlan@gmail.com",
+      "phone": "0694501502",
+      "items": [
+        {
+          "id": "ee54",
+          "title": "GITEX 2026: Future of Tech",
+          "description": "Explorez l’innovation, l’IA et les dernières tendances tech en un seul lieu !",
+          "category": "Tech",
+          "date": "2026-04-07",
+          "image": "https://res.cloudinary.com/disrzmhfk/image/upload/v1767457140/p2aqmji4qjupsx5dgooz.jpg",
+          "price": "400",
+          "lieu": "Marrakech",
+          "quantity": 1
+        }
+      ],
+      "total": 400,
+      "status": "en attente"
+    },
+    {
+      "id": "bb5a",
+      "name": "Ghizlane misbahi",
+      "email": "misbahighizlan@gmail.com",
+      "phone": "0694501502",
+      "items": [
+        {
+          "id": "da14",
+          "title": "Summer Vibes Festival 2026",
+          "description": "Vivez 2 jours de musique, danse et fun sous le soleil !",
+          "category": "Musique",
+          "date": "2026-08-07",
+          "image": "https://res.cloudinary.com/disrzmhfk/image/upload/v1767456503/jow2wipsuubjekmxtw6k.jpg",
+          "price": "250",
+          "lieu": "Rabat",
+          "quantity": 1
+        }
+      ],
+      "total": 250,
+      "status": "en attente"
+    },
+    {
+      "id": "9fe7",
+      "name": "Ghizlane misbahi",
+      "email": "misbahighizlan@gmail.com",
+      "phone": "0694501502",
+      "items": [
+        {
+          "id": "da14",
+          "title": "Summer Vibes Festival 2026",
+          "description": "Vivez 2 jours de musique, danse et fun sous le soleil !",
+          "category": "Musique",
+          "date": "2026-08-07",
+          "image": "https://res.cloudinary.com/disrzmhfk/image/upload/v1767456503/jow2wipsuubjekmxtw6k.jpg",
+          "price": "250",
+          "lieu": "Rabat",
+          "quantity": 1
+        }
+      ],
+      "total": 250,
+      "status": "en attente"
+    },
+    {
+      "id": "d238",
+      "name": "admin",
+      "email": "admin@125gmail.com",
+      "phone": "0253564654564",
+      "items": [
+        {
+          "id": "ee54",
+          "title": "GITEX 2026: Future of Tech",
+          "description": "Explorez l’innovation, l’IA et les dernières tendances tech en un seul lieu !",
+          "category": "Tech",
+          "date": "2026-04-07",
+          "image": "https://res.cloudinary.com/disrzmhfk/image/upload/v1767457140/p2aqmji4qjupsx5dgooz.jpg",
+          "price": "400",
+          "lieu": "Marrakech",
+          "quantity": 1
+        }
+      ],
+      "total": 400,
+      "status": "en attente"
+    },
+    {
+      "id": "f6cd",
+      "name": "admin",
+      "email": "admin@125gmail.com",
+      "phone": "0253564654564",
+      "items": [
+        {
+          "id": "ee54",
+          "title": "GITEX 2026: Future of Tech",
+          "description": "Explorez l’innovation, l’IA et les dernières tendances tech en un seul lieu !",
+          "category": "Tech",
+          "date": "2026-04-07",
+          "image": "https://res.cloudinary.com/disrzmhfk/image/upload/v1767457140/p2aqmji4qjupsx5dgooz.jpg",
+          "price": "400",
+          "lieu": "Marrakech",
+          "quantity": 1
+        }
+      ],
+      "total": 400,
+      "status": "en attente"
+    },
+    {
+      "id": "a5dd",
+      "name": "adminnnn",
+      "email": "misbahighizlan@gmail.com",
+      "phone": "024654654641",
+      "items": [
+        {
+          "id": "da14",
+          "title": "Summer Vibes Festival 2026",
+          "description": "Vivez 2 jours de musique, danse et fun sous le soleil !",
+          "category": "Musique",
+          "date": "2026-08-07",
+          "image": "https://res.cloudinary.com/disrzmhfk/image/upload/v1767456503/jow2wipsuubjekmxtw6k.jpg",
+          "price": "250",
+          "lieu": "Rabat",
+          "quantity": 1
+        }
+      ],
+      "total": 250,
+      "status": "en attente"
+    }
+  ]
 }

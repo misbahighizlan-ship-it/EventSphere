@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios"; 
+import axios from "axios";
 import api from "../../services/api";
 import { useNavigate } from "react-router-dom";
 import "./AddEvent.css";
@@ -11,8 +11,10 @@ export default function AddEvent() {
     title: "",
     description: "",
     category: "",
+    date: "",
     image: "",
     price: "",
+    Location:"",
   });
 
   const [uploading, setUploading] = useState(false);
@@ -21,15 +23,15 @@ export default function AddEvent() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // ✅ Upload image 
+  //  Upload image 
   const handleImageUpload = async (e) => {
     const file = e.target.files[0];
 
     //
     console.log("FILE:", file);
-  console.log("CLOUD NAME:", import.meta.env.VITE_CLOUDINARY_CLOUD_NAME);
-  console.log("UPLOAD PRESET:", import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET);
-//
+    console.log("CLOUD NAME:", import.meta.env.VITE_CLOUDINARY_CLOUD_NAME);
+    console.log("UPLOAD PRESET:", import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET);
+    //
     if (!file) return;
 
     setUploading(true);
@@ -42,14 +44,14 @@ export default function AddEvent() {
     );
 
     try {
-     const res = await axios.post(
-  `https://api.cloudinary.com/v1_1/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload`,
-  data
-);
+      const res = await axios.post(
+        `https://api.cloudinary.com/v1_1/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload`,
+        data
+      );
 
-//
-console.log("CLOUDINARY RESPONSE:", res.data);
-///
+      //
+      console.log("CLOUDINARY RESPONSE:", res.data);
+      ///
       // axios -> res.data
       setForm({ ...form, image: res.data.secure_url });
     } catch (err) {
@@ -103,6 +105,21 @@ console.log("CLOUDINARY RESPONSE:", res.data);
           type="text"
           name="category"
           placeholder="Catégorie"
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="date"
+          name="date"
+          placeholder="jj/mm/aa"
+          onChange={handleChange}
+          required
+        />
+
+<input
+          type="text"
+          name="Location"
+          placeholder="Location"
           onChange={handleChange}
           required
         />

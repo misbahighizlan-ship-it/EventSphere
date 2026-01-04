@@ -28,14 +28,29 @@ export default function Checkout() {
     e.preventDefault();
 
     try {
-      const order = {
+      /*const order = {
         user,
         items: cartItems,
         total,
       };
+*/
+const order = {
+  name: user.name,
+  email: user.email,
+  phone: user.phone,
+  items: cartItems,
+  total,
+  status: "en attente"
+};
+
 
       await api.post("/orders", order);
-      await axios.post(import.meta.env.VITE_N8N_URL, order);
+      try {
+  await axios.post(import.meta.env.VITE_N8N_URL, order);
+} catch (err) {
+  console.log("n8n not available");
+}
+localStorage.setItem("userEmail", user.email);
 
       dispatch(clearCart());
       alert("Commande passée avec succès !");
