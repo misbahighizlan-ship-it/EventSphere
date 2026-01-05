@@ -4,14 +4,14 @@ import axios from "axios";
 import { clearCart } from "../../redux/cartSlice";
 import api from "../../services/api";
 import "./Checkout.css";
-
+import { useNavigate } from "react-router-dom";
 export default function Checkout() {
   const cartItems = useSelector(state => state.cart.items);
   const total = cartItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0
   );
-
+const navigate =useNavigate();
   const dispatch = useDispatch();
 
   const [user, setUser] = useState({
@@ -21,45 +21,48 @@ export default function Checkout() {
   });
 
   const handleChange = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value });
+  setUser({ ...user, [e.target.name]: e.target.value });
+};
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const order = {
+    name: user.name,
+    email: user.email,
+    phone: user.phone,
+    items: cartItems,
+    total,
+    status: "en attente",
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  try {
+    // 1️⃣ إرسال الطلب للسيرفر (ضروري)
+    await api.post("/orders", order);
 
+    // 2️⃣ إرسال الطلب لـ n8n (اختياري)
     try {
-      /*const order = {
-        user,
-        items: cartItems,
-        total,
-      };
-*/
-const order = {
-  name: user.name,
-  email: user.email,
-  phone: user.phone,
-  items: cartItems,
-  total,
-  status: "en attente"
+      await axios.post(import.meta.env.VITE_N8N_URL, order);
+    } catch (err) {
+      console.log("⚠️ n8n not available");
+    }
+
+    // 3️⃣ تخزين الإيميل
+    localStorage.setItem("userEmail", user.email);
+
+    // 4️⃣ تفريغ السلة
+    dispatch(clearCart());
+
+    alert("Commande passée avec succès !");
+  } catch (err) {
+    console.log(err);
+    alert("Erreur lors de la commande !");
+  }
 };
 
 
-      await api.post("/orders", order);
-      try {
-  await axios.post(import.meta.env.VITE_N8N_URL, order);
-} catch (err) {
-  console.log("n8n not available");
-}
-localStorage.setItem("userEmail", user.email);
 
-      dispatch(clearCart());
-      alert("Commande passée avec succès !");
-    } catch (err) {
-      console.log(err);
-      alert("Erreur lors de la commande !");
-    }
-  };
-
+  
   return (
     <div className="checkout-container">
       <h2>Checkout</h2>
@@ -81,6 +84,7 @@ localStorage.setItem("userEmail", user.email);
         <input type="tel" name="phone" placeholder="Téléphone" onChange={handleChange} required />
         <button type="submit">Valider la commande</button>
       </form>
+      <button className="checkout-btn" onClick={()=>navigate("/events")}> Continue à Explorer</button>
     </div>
   );
 }
